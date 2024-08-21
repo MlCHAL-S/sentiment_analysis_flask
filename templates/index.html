@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Project</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Sentiment Analysis Project</h1>
+        <h6 class="text-center">Make sure your text is at least 110 characters long. (The longer the better)</h6>
+
+        <!-- Display flash messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-danger" role="alert">
+              {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <form method="POST" action="/">
+                    <div class="form-group">
+                        <label for="text-input">Enter Text:</label>
+                        <textarea class="form-control" id="text-input" name="text_input" rows="3" placeholder="Type your text here...&#10;(E.g. On a dark desert highway, cool wind in my hair<br>Warm smell of colitas rising up through the air<br>Up ahead in the distance, I saw a shimmering light<br>My head grew heavy and my sight grew dim, I had to stop for the night<br>There she stood in the doorway, I heard the mission bell<br>And I was thinkin' to myself, 'This could be heaven or this could be hell'.<br>Then she lit up a candle and she showed me the way<br>There were voices down the corridor, I thought I heard them say.)"
+                            minlength="110"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Analyze Sentiment</button>
+                </form>
+            </div>
+        </div>
+
+        {% if result %}
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Sentiment Analysis Result:</h5>
+                <p id="result" class="card-text">{{ result }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

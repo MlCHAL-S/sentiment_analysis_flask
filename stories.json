@@ -1,0 +1,19 @@
+{
+  "stories": [
+    {
+      "id": "story_1",
+      "content": "Last weekend was amazing! I spent time with my friends, enjoyed the sunny weather, and we had a fantastic barbecue. Everyone was happy and we laughed all day long. It was the best weekend I've had in a long time!",
+      "expected_label": "positive"
+    },
+    {
+      "id": "story_2",
+      "content": "Yesterday was a terrible day. Everything went wrong from the moment I woke up. My car broke down on the way to work, I missed an important meeting, and to top it all off, it started raining heavily as I walked home. It was just one bad thing after another.",
+      "expected_label": "negative"
+    },
+    {
+      "id": "story_3",
+      "content": "Today was just an ordinary day. I went to work, did my job, and came back home. Nothing special happened, and it felt like any other day. I neither felt particularly happy nor sad, just indifferent.",
+      "expected_label": "negative"
+    }
+  ]
+}
